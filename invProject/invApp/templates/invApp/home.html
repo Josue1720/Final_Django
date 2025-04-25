@@ -1,0 +1,16 @@
+
+
+{% extends "invApp/layout.html"%}
+{%load static%} <!-- dapat palan inot si extends -->
+{% block title %}Inventory App{% endblock %}
+
+{%block content%}
+<div class="jumbotron text-center">
+    <h1 class="display-for">WELCOME TO INVENTORY MANAGEMENT SYSTEM</h1>
+    <p class="lead">
+        Manage your products efficiently and effectively with our easy-to-use inventory management system.
+    </p>
+    <hr class="my-4">
+    <img src="{% static 'img/inv.webp' %}" alt="My Image"> 
+</div>
+{%endblock%}
