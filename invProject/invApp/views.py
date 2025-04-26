@@ -7,6 +7,8 @@ from .models import Products
 
 def home_view(request):
     return render(request, 'invApp/home.html')
+def login_view(request):
+    return render(request, 'invApp/login.html')
 
 def product_create_view(request):
     form = ProductForm()
@@ -15,10 +17,11 @@ def product_create_view(request):
         if form.is_valid():
             form.save()
             return redirect('product_list')
-    return redirect(request, 'invApp/product_form.html', {'form': form})
+    print(form.errors)
+    return render(request, 'invApp/product_form.html', {'form': form})
 
 def product_list_view(request):
-    products = Products.objects.all()
+    products = Products.objects.all().order_by('-product_id')
     return render(request, 'invApp/product_list.html',{
         'products': products 
     })
@@ -31,7 +34,7 @@ def product_update_view(request,product_id):
         if form.is_valid():
             form.save()
             return redirect('product_list')
-    return redirect(request, 'invApp/product_form.html', {'form': form}) 
+    return render(request, 'invApp/product_form.html', {'form': form}) 
 
 
 def product_delete_view(request,product_id):
@@ -39,5 +42,5 @@ def product_delete_view(request,product_id):
     if request.method == 'POST':
         product.delete()
         return redirect('product_list')
-    return render(request, 'invApp/product_delete.html', {'product': product})
+    return render(request, 'invApp/product_confirm_delete.html', {'product': product})
     

@@ -11,3 +11,21 @@ class Products(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = "Product"  # singular name in Admin
+        verbose_name_plural = "Products" 
+        
+class Users(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    username=models.CharField(max_length=100, unique=True)
+    password=models.CharField(max_length=100)
+    
+    
+    def __str__(self):
+        return self.username #para dae magdisplay username
+    
+    
+    class Meta: #Purpose: para maayos yung pangalan na lumalabas sa Django Adm
+        verbose_name = "User"  # singular name in Admin
+        verbose_name_plural = "Users" 

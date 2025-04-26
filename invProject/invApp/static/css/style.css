@@ -1,3 +1,22 @@
 img{
- 
+ height: 300px;
+ width: auto;
+}
+body{
+    padding-top: 56px;
+
+}
+.navbar{
+    background-color: darkgreen;
+}
+.navbar-brand, .nav-link{
+    color: white !important; /* force css rule to apply*/
+
+    } 
+
+.container{
+    margin-top: 20px;
+}
+.table th, .table td{
+    vertical-align: middle;
 }

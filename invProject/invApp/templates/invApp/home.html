@@ -11,6 +11,11 @@
         Manage your products efficiently and effectively with our easy-to-use inventory management system.
     </p>
     <hr class="my-4">
-    <img src="{% static 'img/inv.webp' %}" alt="My Image"> 
+    <div class="mb-4">
+        <img src="{% static 'img/inv.webp' %}"   alt="My Image"  clas="img-fluid auto d-block mx-auto">
+    </div>
+    <a href="{% url 'product_create'%}" class="btn btn-primary btn-lg" role="button">View Products</a>
+   
+ 
 </div>
 {%endblock%}
