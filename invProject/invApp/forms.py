@@ -50,3 +50,22 @@ class ProductForm(forms.ModelForm):
                 }
             )
         }
+        
+class LoginForm(forms.Form): #forms for login
+    username=forms.CharField(
+        widget=forms.TextInput( 
+             attrs={
+              'placeholder':'username',
+             'class':'form-control'   ,             
+             })
+    )
+    password= forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder':'password',
+                 'class':'form=control',
+            }
+        )
+    )
+    
+    
