@@ -48,6 +48,11 @@ class ProductForm(forms.ModelForm):
                 attrs={
                     'placeholder': 'ABC Corp', 'class':'form-control',
                 }
+            ),
+            'image' : forms.ClearableFileInput(  
+                attrs={
+                   'class':'form-control',
+                }
             )
         }
         
@@ -63,7 +68,7 @@ class LoginForm(forms.Form): #forms for login
         widget=forms.PasswordInput(
             attrs={
                 'placeholder':'password',
-                 'class':'form=control',
+                 'class':'form-control',
             }
         )
     )

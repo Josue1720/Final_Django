@@ -4,7 +4,7 @@ from django.contrib import admin
 from .models import Products #import Products model
 from .models import Users
 class ProductsAdmin(admin.ModelAdmin): #create a class for admin site
-    list_display = ('name', 'price', 'quantity','supplier_name','sku',) #display these fields in admin site    
+    list_display = ('name', 'price', 'quantity','supplier_name','sku','image') #display these fields in admin site    
     search_fields = ('name',) #search by product name
     list_filter = ('price',) #filter by product price
 

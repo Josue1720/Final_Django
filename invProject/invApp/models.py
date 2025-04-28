@@ -8,6 +8,7 @@ class Products(models.Model):
     price = models.FloatField(max_length = 100)
     quantity = models.IntegerField()
     supplier_name = models.CharField(max_length = 500)
+    image = models.ImageField(upload_to='images/', default='images/default.png')
 
     def __str__(self):
         return self.name

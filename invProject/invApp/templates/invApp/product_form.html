@@ -3,7 +3,7 @@
 
 {% block content %}
 <h1 class="text-center">PRODUCT FORM</h1>
-<form method="POST" class="jumbotron">
+<form method="POST" class="jumbotron" enctype="multipart/form-data">
     {% csrf_token %} <!-- prevents attack cross site request forgery
  -->
     {{form}}<!--  tells the form para irender  -->

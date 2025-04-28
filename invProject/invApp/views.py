@@ -29,7 +29,7 @@ def login_view(request):
 def product_create_view(request):
     form = ProductForm()
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
             return redirect('product_list')
@@ -59,4 +59,8 @@ def product_delete_view(request,product_id):
         product.delete()
         return redirect('product_list')
     return render(request, 'invApp/product_confirm_delete.html', {'product': product})
-    
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')
